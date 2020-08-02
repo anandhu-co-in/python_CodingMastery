@@ -13,33 +13,22 @@ def modifytree(root):
     right = root.right
     rightMost = root
 
-    # if the left tree exists
     if (root.left):
-        # get the right-most of the
-        # original left subtree
         rightMost = modifytree(root.left)
-
-        # set root right to left subtree
         root.right = root.left
         root.left = None
 
-    # if the right subtree does
-    # not exists we are done!
     if (not right):
         return rightMost
 
-    # set right pointer of right-most
-    # of the original left subtree
     rightMost.right = right
-
-    # modify the rightsubtree
     rightMost = modifytree(right)
     return rightMost
 
 
 # printing using right pointer only
 def printpre(root):
-    while (root != None):
+    while root != None:
         print(root.data, end=" ")
         root = root.right
 

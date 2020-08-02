@@ -1,4 +1,4 @@
-# Target - Solve 1000 Variety of Coding Problems
+# Target - Solve 100 Variety of Coding Problems
 
 
 #FOR WHAT?
@@ -23,4 +23,4 @@
 #Get stuck for long time?:D. Leave it and come back later! Thats perefectly Natural
 
 
-# Count --> 14 1% is done!!
+# Count --> 25 ie 25% is done!!
