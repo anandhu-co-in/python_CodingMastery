@@ -1,31 +1,27 @@
-aPI = "314159265358979323846263383279"
-
-bIN = ['314', '49', '9001', '15926535897', '14', '9323','846263383279', '4', '793']
-
-
-def findMatch(a, b):
-    index = []
-    pos_a = 0
-    count_match = 0
-
-    for i in range(0, len(b)):
-        if pos_a >= len(a):
-            break
-        if checkStr(a, pos_a, b, i) == True:
-            pos_a += len(b[i])
-            count_match += 1
-            index.append(b[i])
-        else:
-            pos_a = pos_a
-    return f"{count_match - 1}({' '.join(index)})"
+PI = "314159265358979323846263383279"
+IN = ['314', '49', '9001', '15926535897', '14', '9323', '846263383279', '4', '793']
 
 
-def checkStr(strA, pos_a, listB, pos_b):
-    for i in range(0, len(listB[pos_b])):
-        if strA[pos_a + i] != listB[pos_b][i]:
-            return False
-        else:
-            return True
+def pos(p):
+    minspaces = -2
+    if p == len(PI)+1:
+        return 0
+    for i in range(p + 1, len(PI) + 1):
+        print(i)
+        if PI[0:i] in IN:
+            if pos(i + 1) != -2:
+                if minspaces == -2 : minspaces=1
+                minspaces = min(minspaces, 1 + pos(i + 1))
+    return minspaces
 
 
-print(findMatch(aPI, bIN))
+pos(0)
+print(pos(0))
+
+123
+
+1, 23
+
+
+#Damn this proble is gonna break my brain.
+#Giving up for today!
