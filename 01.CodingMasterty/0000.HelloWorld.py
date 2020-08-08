@@ -23,4 +23,4 @@
 #Get stuck for long time?:D. Leave it and come back later! Thats perefectly Natural
 
 
-# Count --> 25 ie 25% is done!!
+# Count --> 27 ie 27% is done!!
