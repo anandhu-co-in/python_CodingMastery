@@ -1,15 +1,19 @@
 # Copyright : Rachit AlgoExpert Yt.
+# https://www.youtube.com/watch?v=tOD6g7rF7NA
 # Warning : This piece of code involves some crazy recursion plus some dynamic programming
 # You need to find the minimum no of spaces using which you can split PI so that all substrings exists in IN
 
 PI = "314159265358979323846263383279"
 IN = ['314', '49', '9001', '15926535897', '14', '9323', '846263383279', '4', '793']
 
+dp = dict()
 
-# PI = '12345'
-# IN = ['1','2','3','5','345']
 
 def pos(p):
+    # Using dynamic programming to improve time complexity
+    if p in dp:
+        return dp[p]
+
     ans = None
     # Search for Every Possible Substring starting form position post, that is present in IN
     for i in range(p + 1, len(PI) + 1):
@@ -26,6 +30,8 @@ def pos(p):
                 else:
                     # Maintain the minimum answer for all the matches
                     ans = min(ans, 1 + sub)
+
+    dp[p] = ans
     return ans
 
 
@@ -37,6 +43,3 @@ print(pos(0))
 # Dumb
 # print("P[{}:{}]={}".format(p, i, PI[p:i]))
 # I need to find a way to print the splitted string
-# Code should be optimized using dynamic programming
-# Code should be optimized using hash tables
-# Git commit pending
