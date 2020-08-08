@@ -107,39 +107,37 @@ class Tree:
                 current.left = None
             current = current.right
 
-
     def modifyTreeToRighPointerOnlyRECURSIVE(self):
 
         # For every node, if there is left subtree:
-            # remember the right subtree
-            # Do transform it and get the rightmost end of it
-            # Attach the righ sub tree to that rightmost end
-            # And detach left subtree and attach as right subtree
+        # remember the right subtree
+        # Do transform it and get the rightmost end of it
+        # Attach the righ sub tree to that rightmost end
+        # And detach left subtree and attach as right subtree
 
         # If there is a right to the righmost :
-            # modify that rightmost,right and get the rightmost
+        # modify that rightmost,right and get the rightmost
 
         def modify(root):
-            temp=root.right
-            righmost=root
+            temp = root.right
+            righmost = root
             if root.left is None and root.right is None:
                 return righmost
             else:
                 if root.left:
-                    righmost=modify(root.left)
-                    root.right=root.left
-                    root.left=None
+                    righmost = modify(root.left)
+                    root.right = root.left
+                    root.left = None
 
-                #If we don't have right subtree, we are done!
+                # If we don't have right subtree, we are done!
                 if temp is None:
                     return righmost
-                #Oherwise. we need to attach it to the rightmost and modify it also!
+                # Oherwise. we need to attach it to the rightmost and modify it also!
                 else:
-                    righmost.right=temp
+                    righmost.right = temp
                     return modify(temp)
 
         modify(self.root)
-
 
 
 # Create the same tree given in question
