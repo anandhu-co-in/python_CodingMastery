@@ -24,3 +24,9 @@
 # Making use of HashTables , for keeping track of already visited
 # How to manipulate multiple Variables/Pointers at once
 # Find Longest Palindromic Substring in a string
+
+
+
+
+#Solving git proxy issue form this link
+#https://stackoverflow.com/questions/32268986/git-how-to-remove-proxy/32269086
