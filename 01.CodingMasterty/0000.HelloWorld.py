@@ -1,17 +1,9 @@
 # Target - Solve 100 Variety of Coding Problems
 
-
-# FOR WHAT?
-
-# ---> To make myself happy
-# ---> To get better at coding
-# thats it!
-
-# Will i be disappointed if i didnt get any job opertunity even though i completed this ? :
+# WIBBIFIDGAJEACT ? :
 # ---> Absolutely NOT!! :P
 
-# Never get Overwhelmed. You have a a well defined Goal. It is achievable!!!
-
+# If you have a a well defined Goal. It is achievable!!!
 
 # Rules
 
