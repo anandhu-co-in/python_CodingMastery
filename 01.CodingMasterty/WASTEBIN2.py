@@ -1,12 +1,7 @@
-
-x=None
-
-
-if not x:
-    print(x)
+array="12345678"
 
 
-
+print(array[4:6])
 
 
 
