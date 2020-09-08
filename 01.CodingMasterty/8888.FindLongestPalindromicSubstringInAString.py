@@ -1,7 +1,7 @@
 # Given A String, you need to find the Largest Palindromic Substring inside it
 
-def findLargestPalindrome(str):
-    largestPal = ""
+def find_largest_palindrome(str):
+    largest_pal = ""
     n = len(str)
 
     def expand(pointer1, pointer2):
@@ -16,17 +16,17 @@ def findLargestPalindrome(str):
 
     for i in range(0, n):
         pal = expand(i, i)
-        if len(pal) > len(largestPal):
+        if len(pal) > len(largest_pal):
             print("Found new large pal {} with leng {}".format(pal, len(pal)))
-            largestPal = pal
+            largest_pal = pal
 
         if i < len(str) - 1 and str[i] == str[i + 1]:
             pal = expand(i, i + 1)
-            if len(pal) > len(largestPal):
+            if len(pal) > len(largest_pal):
                 print("Found new pal {} with length {}, its an even pal".format(pal, len(pal)))
-                largestPal = pal
+                largest_pal = pal
 
-    return largestPal
+    return largest_pal
 
 
-print(findLargestPalindrome("malayalamXaaaaaOOaaaaaX"))
+print(find_largest_palindrome("malayalamXaaaaaOOaaaaaX"))
