@@ -30,3 +30,6 @@ def find_largest_palindrome(str):
 
 
 print(find_largest_palindrome("malayalamXaaaaaOOaaaaaX"))
+
+# There is a better approch called manachers algorithm which has O(N),, Above one has O(n2)
+# https://www.youtube.com/watch?v=nbTSfrEfo6M
