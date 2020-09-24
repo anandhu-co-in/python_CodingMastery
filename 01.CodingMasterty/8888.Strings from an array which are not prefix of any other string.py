@@ -15,3 +15,34 @@
 # Input: arr[] = {“a”, “aa”, “aaa”, “aaaa”}
 # Output:
 # aaaa
+
+
+def printAllNonePrefixOnes(arr):
+
+    n=len(arr)
+
+    for i in range(0,n):
+        include=True
+        for j in range(i+1,n):
+            if arr[j].startswith(arr[i]):
+                include=False
+                break
+        if include:
+            print("{} exists ".format(i))
+            print(arr)
+            arr.remove(arr[i])
+            n=n-1
+
+    print(arr)
+
+
+
+printAllNonePrefixOnes(['apple', 'app', 'there', 'the', 'like'])
+
+
+
+
+
+
+
+
