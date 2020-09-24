@@ -1,3 +1,62 @@
+# Implement Radix Sort
+import math
+
+
+# Helper function to get specific digit in a position
+def getDigit(number, pos):
+    digit = math.floor(number / pow(10, pos)) % 10
+    print("{} has {} in position {}".format(number,digit,pos))
+    return digit
+
+
+def digitCount(num):
+    if num==0 : return 1
+    count= math.floor(math.log10(num))+1;
+    print("{} has {} digits".format(num,count));
+    return count
+
+def mostDigits(nums):
+    maxdigits=0
+    for x in nums:
+        maxdigits=max(digitCount(x),maxdigits)
+    print("Largest digit count is {}".format(maxdigits))
+    return  maxdigits
+
+
+
+def radixSort(arr):
+
+    buckets={}
+
+    iter=mostDigits(arr)
+    for i in range(0,iter):
+        for x in arr:
+            bucket=getDigit(x,i)
+
+            if bucket in buckets:
+                buckets[bucket]=buckets[bucket].append(x)
+            else:
+                print("Created bucket {}".format(buckets))
+                buckets[bucket]=[x]
+        sorteArray=[]
+
+        for b in buckets:
+            sorteArray.append(buckets[b])
+        print(sorteArray)
+    pass
+
+
+getDigit(1234,3)
+digitCount(0)
+print(radixSort([124,5675,343,675,11,54,10,7,2]))
+
+
+
+
+
+
+
+
 # function getDigit(num, i) {
 #   return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
 # }
@@ -29,11 +88,3 @@
 # }
 #
 # radixSort([23,345,5467,12,2345,9852])
-#
-#
-#
-#
-#
-#
-#
-#
