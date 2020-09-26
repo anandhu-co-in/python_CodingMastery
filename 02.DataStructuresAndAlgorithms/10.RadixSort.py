@@ -26,11 +26,15 @@ def mostDigits(nums):
 
 def radixSort(arr):
 
-    buckets={}
+
     sorteArray = []
 
     iter=mostDigits(arr)
     for i in range(0,iter):
+        buckets = {0:[],1:[],2:[],3:[],4:[],5:[],6:[],7:[],8:[],9:[]}
+        print(buckets)
+        # buckets = dict.fromkeys([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], []) #<<--------------Intresting! If i use this code, it doesent work!
+        # print(buckets)
         for x in arr:
             bucket=getDigit(x,i)
 
@@ -39,15 +43,15 @@ def radixSort(arr):
             else:
                 # print("Created bucket {}".format(buckets))
                 buckets[bucket]=[x]
+
         sorteArray=[]
-        buckets=dict(sorted(buckets.items()))
         print("Buckets : {}".format(buckets))
         for b in buckets:
             # print("Current key {}".format(b))
             sorteArray+=buckets[b]
         print("Sorted Merged Buckets : {}".format(sorteArray))
         arr=sorteArray
-        buckets={}
+
 
     return (sorteArray)
 
@@ -58,7 +62,7 @@ print(radixSort([3221,1,10,9680,577,9420,7,5622,4793,2030,3138,82,2599,743,4127]
 
 
 
-
+# Complexity=O(nk)
 
 
 
