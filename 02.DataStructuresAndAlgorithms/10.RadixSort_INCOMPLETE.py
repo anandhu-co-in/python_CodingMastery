@@ -5,21 +5,21 @@ import math
 # Helper function to get specific digit in a position
 def getDigit(number, pos):
     digit = math.floor(number / pow(10, pos)) % 10
-    print("{} has {} in position {}".format(number,digit,pos))
+    # print("{} has {} in position {}".format(number,digit,pos))
     return digit
 
 
 def digitCount(num):
     if num==0 : return 1
     count= math.floor(math.log10(num))+1;
-    print("{} has {} digits".format(num,count));
+    # print("{} has {} digits".format(num,count));
     return count
 
 def mostDigits(nums):
     maxdigits=0
     for x in nums:
         maxdigits=max(digitCount(x),maxdigits)
-    print("Largest digit count is {}".format(maxdigits))
+    # print("Largest digit count is {}".format(maxdigits))
     return  maxdigits
 
 
@@ -27,6 +27,7 @@ def mostDigits(nums):
 def radixSort(arr):
 
     buckets={}
+    sorteArray = []
 
     iter=mostDigits(arr)
     for i in range(0,iter):
@@ -34,21 +35,26 @@ def radixSort(arr):
             bucket=getDigit(x,i)
 
             if bucket in buckets:
-                buckets[bucket]=buckets[bucket].append(x)
+                buckets[bucket].append(x)
             else:
-                print("Created bucket {}".format(buckets))
+                # print("Created bucket {}".format(buckets))
                 buckets[bucket]=[x]
         sorteArray=[]
-
+        buckets=dict(sorted(buckets.items()))
+        print("Buckets : {}".format(buckets))
         for b in buckets:
-            sorteArray.append(buckets[b])
-        print(sorteArray)
-    pass
+            # print("Current key {}".format(b))
+            sorteArray+=buckets[b]
+        print("Sorted Merged Buckets : {}".format(sorteArray))
+        arr=sorteArray
+        buckets={}
 
+    return (sorteArray)
 
 getDigit(1234,3)
 digitCount(0)
-print(radixSort([124,5675,343,675,11,54,10,7,2]))
+# print(radixSort([124,5675,343,675,11,54,10,7,2]))
+print(radixSort([3221,1,10,9680,577,9420,7,5622,4793,2030,3138,82,2599,743,4127]))
 
 
 
