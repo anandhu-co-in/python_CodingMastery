@@ -94,3 +94,8 @@ myheap.extractMax()
 
 
 
+#Coplexity of binary heaps
+
+# Insertion longN
+# removal LogN
+# Search N

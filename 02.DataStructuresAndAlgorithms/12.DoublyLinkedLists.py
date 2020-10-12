@@ -14,6 +14,7 @@ class DoublyLinkedList:
         self.length=0
 
     def traverse(self):
+        print("")
         current=self.head
         while(current!=None):
             print(current.val,end= " ")
@@ -138,6 +139,29 @@ class DoublyLinkedList:
         self.length=self.length+1
 
 
+    def remove(self,index):
+
+        if index<0 or index>=self.length :
+            print("Remove failed")
+            return
+        if index==0 :
+            self.shift()
+            return
+        if index==self.length-1:
+            self.pop()
+            return
+
+        foundNode=self.get(index-1)
+        if foundNode==None :
+            print("Index not found for setting")
+            return
+        else:
+            foundNode.next.next.prev=foundNode
+            foundNode.next = foundNode.next.next
+
+        self.length=self.length-1
+
+
 
 list = DoublyLinkedList()
 list.push("Harry")
@@ -152,10 +176,12 @@ list.unshift("Dumbledore")
 list.unshift("ProfSnape")
 list.unshift("Lupin")
 print("Shifted {}".format(list.shift()))
-print("Value at position {} is {}".format(4,list.get(4).val))
+print("Value at position {} is {}".format(4,list.get(4).val)) #index from 0
 list.set(4,"EmmaWatson")
 list.insert(3,"Crush")
 print("Value at position {} is {}".format(4,list.get(4).val))
 list.insert(0,"Ceddrig")
 list.insert(8,"Diggory")
+list.traverse()
+list.remove(6)
 list.traverse()
