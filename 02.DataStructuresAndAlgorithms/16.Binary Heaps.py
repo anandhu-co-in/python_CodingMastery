@@ -3,36 +3,39 @@ from math import floor
 
 class BinaryHeap:
 
+
     def __init__(self):
+        # Set empty array
         self.values=[]
 
     def insert(self,val):
+        #Add value to end of array then 'bubble up'
         self.values.append(val)
         self.bubbleUp()
         print("Inserted {} ".format(val))
 
 
     def bubbleUp(self):
-        i=len(self.values) -1
-        current=self.values[i]
+        i=len(self.values) -1  # index of last element
+        current=self.values[i] # last element
         while(i>0):
             parentI=floor((i-1)/2)
-            parent=self.values[parentI]
-            if parent>current :break
+            parent=self.values[parentI] # Get prant of it
+            if parent>current :break # If parent is greater. insertion complete. Else swap
             self.values[parentI]=current
             self.values[i]=parent
-            i=parentI
+            i=parentI # bubble up parent
 
-
+    #delete - in heap we do extract max
     def extractMax(self):
 
         if len(self.values)==0:
             print("Heap Empty. No max value present")
         else:
-            print("Max Value Extracted {}".format(self.values[0]))
-            lastval = self.values.pop()
-            if len(self.values)>0 :
-                self.values[0]=lastval
+            print("Max Value Extracted {}".format(self.values[0])) # Extracted first value
+            lastval = self.values.pop() # Popout last value
+            if len(self.values)>0 : # If atleast one element left
+                self.values[0]=lastval  # Replace first value with it
                 self.syncDown()
 
     def syncDown(self):
